@@ -6,6 +6,7 @@ __pycache__/
 # C extensions
 *.so
 /zippedData
+/data
 
 # Distribution / packaging
 .Python
@@ -28,11 +29,11 @@ share/python-wheels/
 MANIFEST
 
 # Files types
-* .db
-* .DS_Store
-* .csv
-* .tsv
-* .gz
+*.db
+*.DS_Store
+*.csv
+*.tsv
+*.gz
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
