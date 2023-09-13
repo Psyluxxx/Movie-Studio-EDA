@@ -1,10 +1,16 @@
+![img](./images/IMAX-banner-2.jpg)
+
 # IMDb Movie Data EDA
 
 **Authors**: Franko Ndou, Anthony Brocco
 
+![img](./images/oppenheimer-starring-then-closing-his-eyes-oppenheimer.gif)
+
 ## Overview
 
 IMDb has provided access to an SQL database containing extensive movie data, in addition to two CSV files we obtained. These resources facilitate an Exploratory Data Analysis (EDA) aimed at addressing complex business challenges. Our primary goal is to identify the top-performing films in the current box office and translate our findings into comprehensible data visualizations and recommendations.
+
+![img](./images/universal-share.jpg)
 
 ## Business Problem
 
@@ -14,7 +20,11 @@ Universal Pictures aspires to produce the next blockbuster film with a substanti
 
 We are using multiple data sets, mainly the IMDb database as well as two other CSV files that can all be found [here](https://github.com/learn-co-curriculum/dsc-phase-2-project-v3/tree/main/zippedData)
 
-## Creating the Production Team
+## Methods
+
+This project required us to explore a massive SQL database, dropping and cleaning rows and columns as we went, to be able to come up with visualizations and statistical tests to find out how to create the best possible movie. 
+
+### Creating the Production Team
 
 Assembling a top-notch production team is essential for creating a successful film. Identifying the best director and writer for the job is crucial. While actors play significant roles, directors often craft roles with specific actors in mind. Therefore, determining the most successful actor may not directly contribute to our production team's ability to make the best possible movie. The success of a film largely hinges on the artistic vision of the director and the script quality. Relying solely on statistics related to actors may not enhance our return on investment (ROI) and could potentially have a detrimental impact on the film's quality.
 
