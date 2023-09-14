@@ -4,17 +4,17 @@
 
 **Authors**: Franko Ndou, Anthony Brocco
 
-![img](./images/oppenheimer-starring-then-closing-his-eyes-oppenheimer.gif)
-
 ## Overview
 
 IMDb has provided access to an SQL database containing extensive movie data, in addition to two CSV files we obtained. These resources facilitate an Exploratory Data Analysis (EDA) aimed at addressing complex business challenges. Our primary goal is to identify the top-performing films in the current box office and translate our findings into comprehensible data visualizations and recommendations.
 
-![img](./images/universal-share.jpg)
+![img](./images/oppy.gif)
 
 ## Business Problem
 
 Universal Pictures aspires to produce the next blockbuster film with a substantial budget. Their vision includes assembling the finest directors, actors, and implementing optimal business strategies to create not only a generation-defining film but also to maximize return on investment (ROI). Our task is to conduct an in-depth Exploratory Data Analysis (EDA) using extensive datasets to help Universal reach a conclusion on the most effective approach to achieving this ambitious goal.
+
+![img](./images/inception.gif)
 
 ## Data
 
@@ -24,47 +24,58 @@ We are using multiple data sets, mainly the IMDb database as well as two other C
 
 This project required us to explore a massive SQL database, dropping and cleaning rows and columns as we went, to be able to come up with visualizations and statistical tests to find out how to create the best possible movie. 
 
-### Creating the Production Team
+## Creating the Production Team
 
 Assembling a top-notch production team is essential for creating a successful film. Identifying the best director and writer for the job is crucial. While actors play significant roles, directors often craft roles with specific actors in mind. Therefore, determining the most successful actor may not directly contribute to our production team's ability to make the best possible movie. The success of a film largely hinges on the artistic vision of the director and the script quality. Relying solely on statistics related to actors may not enhance our return on investment (ROI) and could potentially have a detrimental impact on the film's quality.
 
-## Setting Up the Workspace
+### Highest rated writers and directors
 
-```python
-# Importing libraries
-import pandas as pd
-import sqlite3 
-import seaborn as sns
-import matplotlib.pyplot as plt
-from scipy import stats
-import numpy as np
-import warnings
+Highest rated directors:
+![img](./images/dir_table.png)
 
-# Ignores warnings 
-warnings.filterwarnings("ignore")
+Highest rated Writers:
+![img](./images/writ_table.png)
 
-# Creating data frames and establishing connections
-budgets = pd.read_csv('../zippedData/movie_budget_cleaned.csv')
-gross = pd.read_csv('../zippedData/gross_movie_cleaned.csv')
-conn = sqlite3.connect('../zippedData/im.db')
-```
+It seemed like Christopher Nolan, David Fincher, and J.J Abrams we all critically aclaimed directors. Creating movies with high user ratings as well as popular movies with a massive amount of votes.
 
-## Hypothesis Testing
+### Finding the average ROI of the selected directors
 
-Statistical analysis is used to assess the likelihood and confidence of Christopher Nolan's movies outperforming those of other directors. This analysis provides valuable insights into the comparative performance of different directors.
+Nolan Table:
+![img](./images/nolan_describe.png)
+Fincher Table:
+![img](./images/fincher_describe.png)
+Abrams Table:
+![img](./images/abrams_describe.png)
+
+Clearly, all of these directors are very talented, but Christopher Nolan stands out with the highest average rating for his movies. Additionally, he has worked with the largest budgets and consistently achieved high gross earnings on average. While his ROI might not be as high as David Fincher's, his impressive average rating and extensive experience in handling extremely high budget films make him a strong candidate.
+
+### Hypothesis Testing
+
+Statistical analysis is used to assess the likelihood and confidence of these films outperforming those of other directors. This analysis provides valuable insights into the comparative performance of different directors.
 
 ```python
 # Performing Nolan test
 stats.ttest_1samp(c_nolan_films['ROI'], 1.74)
 
+Ttest_1sampResult(statistic=3.5295998983514654, pvalue=0.038650297441573986)
+
+
 # Performing Fincher test
 stats.ttest_1samp(d_fincher_films['ROI'], 1.74)
 
+Ttest_1sampResult(statistic=1.9116222577918325, pvalue=0.19608030549749136)
+
 # Performing Abrams test
 stats.ttest_1samp(j_abrams_films['ROI'], 1.74)
+
+Ttest_1sampResult(statistic=0.7924863500783006, pvalue=0.5733739533852609)
 ```
 
-Based on the sample set we have, there is a 3.8% chance that Christopher Nolan's films will not achieve an ROI of 1.74 or higher. This suggests a high likelihood (96.2%) that Christopher Nolan will indeed generate a return on investment for us. Consequently, employing Christopher Nolan as the director and potentially as the writer for our film is strongly recommended, aligning with the data-driven evidence.
+Based on the sample set we have, there is a 3.8% chance that Christopher Nolan's films will not achieve an ROI of 1.74 or higher. This suggests a high likelihood (96.2%) that Christopher Nolan will indeed generate a return on investment for us.
+
+However, the same level of confidence cannot be expressed for the other directors. It appears more likely that these directors will perform similarly to or worse than the average ROI within the industry.
+
+Given this analysis, it strongly recommends employing Christopher Nolan as the director and potentially as the writer for our film. If he wishes to collaborate any other writer, that would be acceptable, considering his significant success within the industry. This decision aligns with the data-driven evidence we have and is likely to yield a favorable ROI for Universal Pictures.
 
 ## Which Genres Have the Largest ROI?
 
@@ -81,10 +92,11 @@ plt.title('Average ROI by Genre')
 plt.tight_layout()
 plt.show()
 ```
+![img](./images/avgroigenre.png)
 
 ## Best Time to Release Films
 
-Wednesday is the best day to release our movie, with the highest ROI. Releasing during the warmer months, such as June, July, and May, is recommended as people are more likely to go to the movies during this period.
+Wednesday is the best day to release our movie, with the highest ROI. Releasing during the warmer months, such as June, July, and May, is recommended as people are more likely to go to the movies during this period. This hypothesis likely supports the larger ROI's during those months.
 
 ```python
 # Create bars for day of the week vs. domestic gross
@@ -102,6 +114,9 @@ plt.ylabel('Domestic Gross per million')
 plt.title('Domestic Gross by Month of the Year')
 plt.show()
 ```
+
+![img](./images/bestdayforfilm.png)
+![img](./images/month.png)
 
 ## Finding the Right Musician for the Score
 
@@ -138,6 +153,8 @@ chosen_artists = chosen_artists[chosen_artists['ROI'] > 1.74]
 chosen_artists = chosen_artists[chosen_artists['numvotes'] > 10000]
 chosen_artists[chosen_artists['averagerating'] >= 7]
 ```
+
+![img](./images/sound_team.png)
 
 ## Backup Directors
 
@@ -176,10 +193,30 @@ chosen_directors_filtered = chosen_directors[chosen_directors['averagerating'] >
 chosen_directors_filtered.dropna().reset_index()
 ```
 
+![img](./images/backup_dir.png)
+
 ## Conclusion
 
-This EDA provides valuable insights into making data-driven decisions for Universal Pictures. It highlights key recommendations, such as producing an action movie, releasing on Wednesdays, working with Christopher Nolan, and selecting talented musicians. While data analysis cannot guarantee success, it enhances the likelihood of achieving the desired ROI and critical acclaim. Additional steps like predictive modeling, A/B testing, and market analysis can further refine decision-making.
+An EDA only allows us to look at the statistical data and come up with likely probabilities. There is no way to guarantee the performance of any individual director, actor, musician, or genre. However, with that being said, we feel comfortable creating business recommendations based on the likelihood of these events occurring, as well as basing them on the trends within the industry.
 
+- Categorically, action films generate the largest return on investment by far, compared to any other movie genre. This is likely due to the mass popularity of action films. We should aim to create an action movie as it will have the largest target audience as well as generate the most ROI for our company.
+<br>
+- The best day to release our film is during Wednesday. Most films are actually released on Friday; however, Wednesday has the largest ROI by far. We should aim for the warmer months as well, such as June, July, and May. As those months tend to generate the most ROI as well.
+
+        - This is likely because during the warmer months, people are willing to drive out to see movies and spend time, whereas during colder months, people will tend to stay home to avoid inclement weather.
+        - Wednesday likely generates the highest ROI because it's in the middle of the week, which allows most people to view the film within the first week. However, there is no real way to prove this theory; all we know is that Wednesday generates the highest ROI on average.
+<br>
+- We should absolutely work with a talented director who is not only critically acclaimed but also has a reputation for generating a positive ROI. Through data exploration as well as visualizations, we've come to the conclusion that the current best option would be Christopher Nolan. We have also provided a table of potential backup directors who all meet our criteria, assuming Mr. Nolan is not available.
+
+        - Mr. Nolan generates an above-average ROI compared to other high-budget films (1.74 Avg / 3.13 Nolan).
+        - He has one of the highest IMDb user rating scores (8.8).
+        - The majority of his movies fall within a 7.8-8.8 range of user ratings.
+        - The probability of a Christopher Nolan film underperforming is close to 3.8%.
+<br>
+- The score of a movie is incredibly important as it often dictates the mood and ambiance of the film. With that being said, we have provided a list of potential musicians who fall within our selected criteria.
+
+        - James P. Lay and Kevin Westley are our two recommendations for soundtrack producers. They have collectively worked on incredible movies such as Inception, Se7en, World War Z, Fight Club, and The Dark Knight.
+        
 ## Next Steps
 
 To provide even more insight for Universal Pictures, these are the steps we could take
