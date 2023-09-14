@@ -1,8 +1,8 @@
-![img](./images/IMAX-banner-2.jpg)
+![img](./images/IMAX.jpg)
 
 # IMDb Movie Data EDA
 
-**Authors**: Franko Ndou, Anthony Brocco
+**Authors**: Franko Ndou and Anthony Brocco
 
 ## Overview
 
@@ -31,9 +31,11 @@ Assembling a top-notch production team is essential for creating a successful fi
 ### Highest rated writers and directors
 
 Highest rated directors:
+
 ![img](./images/dir_table.png)
 
 Highest rated Writers:
+
 ![img](./images/writ_table.png)
 
 It seemed like Christopher Nolan, David Fincher, and J.J Abrams we all critically aclaimed directors. Creating movies with high user ratings as well as popular movies with a massive amount of votes.
@@ -71,7 +73,7 @@ stats.ttest_1samp(j_abrams_films['ROI'], 1.74)
 Ttest_1sampResult(statistic=0.7924863500783006, pvalue=0.5733739533852609)
 ```
 
-Based on the sample set we have, there is a 3.8% chance that Christopher Nolan's films will not achieve an ROI of 1.74 or higher. This suggests a high likelihood (96.2%) that Christopher Nolan will indeed generate a return on investment for us.
+Based on the sample set we have, there is a 3.8% chance that Christopher Nolan's films will not achieve an ROI of 1.74 (The industry mean for films with a budget of $50 million) or higher. This suggests a high likelihood (96.2%) that Christopher Nolan will indeed generate a higher average return on investment for us.
 
 However, the same level of confidence cannot be expressed for the other directors. It appears more likely that these directors will perform similarly to or worse than the average ROI within the industry.
 
@@ -200,21 +202,18 @@ chosen_directors_filtered.dropna().reset_index()
 An EDA only allows us to look at the statistical data and come up with likely probabilities. There is no way to guarantee the performance of any individual director, actor, musician, or genre. However, with that being said, we feel comfortable creating business recommendations based on the likelihood of these events occurring, as well as basing them on the trends within the industry.
 
 - Categorically, action films generate the largest return on investment by far, compared to any other movie genre. This is likely due to the mass popularity of action films. We should aim to create an action movie as it will have the largest target audience as well as generate the most ROI for our company.
-<br>
-- The best day to release our film is during Wednesday. Most films are actually released on Friday; however, Wednesday has the largest ROI by far. We should aim for the warmer months as well, such as June, July, and May. As those months tend to generate the most ROI as well.
 
+- The best day to release our film is during Wednesday. Most films are actually released on Friday; however, Wednesday has the largest ROI by far. We should aim for the warmer months as well, such as June, July, and May. As those months tend to generate the most ROI as well.
         - This is likely because during the warmer months, people are willing to drive out to see movies and spend time, whereas during colder months, people will tend to stay home to avoid inclement weather.
         - Wednesday likely generates the highest ROI because it's in the middle of the week, which allows most people to view the film within the first week. However, there is no real way to prove this theory; all we know is that Wednesday generates the highest ROI on average.
-<br>
-- We should absolutely work with a talented director who is not only critically acclaimed but also has a reputation for generating a positive ROI. Through data exploration as well as visualizations, we've come to the conclusion that the current best option would be Christopher Nolan. We have also provided a table of potential backup directors who all meet our criteria, assuming Mr. Nolan is not available.
 
+- We should absolutely work with a talented director who is not only critically acclaimed but also has a reputation for generating a positive ROI. Through data exploration as well as visualizations, we've come to the conclusion that the current best option would be Christopher Nolan. We have also provided a table of potential backup directors who all meet our criteria, assuming Mr. Nolan is not available.
         - Mr. Nolan generates an above-average ROI compared to other high-budget films (1.74 Avg / 3.13 Nolan).
         - He has one of the highest IMDb user rating scores (8.8).
         - The majority of his movies fall within a 7.8-8.8 range of user ratings.
         - The probability of a Christopher Nolan film underperforming is close to 3.8%.
-<br>
-- The score of a movie is incredibly important as it often dictates the mood and ambiance of the film. With that being said, we have provided a list of potential musicians who fall within our selected criteria.
 
+- The score of a movie is incredibly important as it often dictates the mood and ambiance of the film. With that being said, we have provided a list of potential musicians who fall within our selected criteria.
         - James P. Lay and Kevin Westley are our two recommendations for soundtrack producers. They have collectively worked on incredible movies such as Inception, Se7en, World War Z, Fight Club, and The Dark Knight.
         
 ## Next Steps
