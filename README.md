@@ -204,17 +204,17 @@ An EDA only allows us to look at the statistical data and come up with likely pr
 - Categorically, action films generate the largest return on investment by far, compared to any other movie genre. This is likely due to the mass popularity of action films. We should aim to create an action movie as it will have the largest target audience as well as generate the most ROI for our company.
 
 - The best day to release our film is during Wednesday. Most films are actually released on Friday; however, Wednesday has the largest ROI by far. We should aim for the warmer months as well, such as June, July, and May. As those months tend to generate the most ROI as well.
-        - This is likely because during the warmer months, people are willing to drive out to see movies and spend time, whereas during colder months, people will tend to stay home to avoid inclement weather.
-        - Wednesday likely generates the highest ROI because it's in the middle of the week, which allows most people to view the film within the first week. However, there is no real way to prove this theory; all we know is that Wednesday generates the highest ROI on average.
+    - This is likely because during the warmer months, people are willing to drive out to see movies and spend time, whereas during colder months, people will tend to stay home to avoid inclement weather.
+    - Wednesday likely generates the highest ROI because it's in the middle of the week, which allows most people to view the film within the first week. However, there is no real way to prove this theory; all we know is that Wednesday generates the highest ROI on average.
 
 - We should absolutely work with a talented director who is not only critically acclaimed but also has a reputation for generating a positive ROI. Through data exploration as well as visualizations, we've come to the conclusion that the current best option would be Christopher Nolan. We have also provided a table of potential backup directors who all meet our criteria, assuming Mr. Nolan is not available.
-        - Mr. Nolan generates an above-average ROI compared to other high-budget films (1.74 Avg / 3.13 Nolan).
-        - He has one of the highest IMDb user rating scores (8.8).
-        - The majority of his movies fall within a 7.8-8.8 range of user ratings.
-        - The probability of a Christopher Nolan film underperforming is close to 3.8%.
+    - Mr. Nolan generates an above-average ROI compared to other high-budget films (1.74 Avg / 3.13 Nolan).
+    - He has one of the highest IMDb user rating scores (8.8).
+    - The majority of his movies fall within a 7.8-8.8 range of user ratings.
+    - The probability of a Christopher Nolan film underperforming is close to 3.8%.
 
 - The score of a movie is incredibly important as it often dictates the mood and ambiance of the film. With that being said, we have provided a list of potential musicians who fall within our selected criteria.
-        - James P. Lay and Kevin Westley are our two recommendations for soundtrack producers. They have collectively worked on incredible movies such as Inception, Se7en, World War Z, Fight Club, and The Dark Knight.
+    - James P. Lay and Kevin Westley are our two recommendations for soundtrack producers. They have collectively worked on incredible movies such as Inception, Se7en, World War Z, Fight Club, and The Dark Knight.
         
 ## Next Steps
 
