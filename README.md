@@ -1,6 +1,6 @@
 ![img](./images/IMAX.jpg)
 
-# IMDb Movie Data EDA
+# IMDb Film Market Analysis
 
 **Authors**: Franko Ndou and Anthony Brocco
 
