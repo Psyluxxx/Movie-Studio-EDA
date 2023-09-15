@@ -6,13 +6,13 @@
 
 ## Overview
 
-IMDb has provided access to an SQL database containing extensive movie data, in addition to two CSV files we obtained. These resources facilitate an Exploratory Data Analysis (EDA) aimed at addressing complex business challenges. Our primary goal is to identify the top-performing films in the current box office and translate our findings into comprehensible data visualizations and recommendations.
+IMDb has an SQL database containing extensive movie data, along with two other CSV files that we have obtained. These resources will assist us in conducting a market data analysis to address complex business challenges. Our objective is to identify the top-performing films at the current box office and translate our findings into comprehensible data visualizations and recommendations.
 
 ![img](./images/oppy.gif)
 
 ## Business Problem
 
-Universal Pictures aspires to produce the next blockbuster film with a substantial budget. Their vision includes assembling the finest directors, actors, and implementing optimal business strategies to create not only a generation-defining film but also to maximize return on investment (ROI). Our task is to conduct an in-depth Exploratory Data Analysis (EDA) using extensive datasets to help Universal reach a conclusion on the most effective approach to achieving this ambitious goal.
+Universal Pictures is aiming to produce the next blockbuster film with a substantial budget. They intend to assemble the finest directors, actors, and implement optimal business strategies to not only create the greatest film of our generation but also to maximize return on investment (ROI). Our task is to conduct an in-depth market analysis using extensive datasets to assist Universal in reaching a conclusion on the most effective approach to achieve this ambitious goal.
 
 ![img](./images/inception.gif)
 
@@ -214,23 +214,25 @@ An EDA only allows us to look at the statistical data and come up with likely pr
     - The probability of a Christopher Nolan film underperforming is close to 3.8%.
 
 - The score of a movie is incredibly important as it often dictates the mood and ambiance of the film. With that being said, we have provided a list of potential musicians who fall within our selected criteria.
-    - James P. Lay and Kevin Westley are our two recommendations for soundtrack producers. They have collectively worked on incredible movies such as Inception, Se7en, World War Z, Fight Club, and The Dark Knight.
+    - Sam Estes and Andrew Kawczynski are our two recommendations for soundtrack producers. They have collectively worked on incredible movies such as Inception, Planet of the Apes, Interstellar, Top Gun Maverick and The Dark Knight.
         
 ## Next Steps
 
 To provide even more insight for Universal Pictures, these are the steps we could take
 
-- Predictive Modeling: We can build predictive models using machine learning techniques. We could use features like director, genre, release date, and budget to predict box office performance. This would require splitting our data into training and testing sets, selecting appropriate algorithms, and evaluating model performance.
+- We can build predictive models using machine learning techniques. We could use features like director, genre, release date, and budget to predict box office performance. This would require splitting our data into training and testing sets, selecting appropriate algorithms, and evaluating model performance.
 
-- A/B Testing: We could consider running A/B tests for factors like release date or marketing strategies to determine their impact on box office success. A well-designed A/B test can provide valuable insights.
+- Import a database that has a detailed filmography of directors and studios, We lost a some data from cleaning due to the fact it was incredibly difficult to filter and maintain everything that was relevant. Some newer movies are not on this list either, and it would be important to analyze the current market rather than the market a few years ago.
 
-- Market Analysis: We could conduct a deeper market analysis to understand the competitive landscape and audience preferences. Analyze trends in the movie industry, such as the rise of streaming services and changing consumer behavior.
+- Compare how best-sellers in all film genres compete with each other. Action movies may have the highest ROI on average but we should look at the outliers for each genre and see how popular they became and how much they generated.
 
-- Budget Optimization: Explore cost optimization strategies, such as how to allocate the budget effectively across different aspects of movie production, including marketing and distribution.
+- Research how musical data influences the success of films. What musical genres have the highest impact on other film genres? What is the average length of a song in each genre, what variety of musical genres are within an OST? 
+
+- Compare and contrast ROI and user rating relative to genre for directors. See how directors perform in each individual genre and compare it to the averages of other directors and genres.
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./code/Analysis_of_Movie_Data.ipynb) or our [presentation](./Movie_EDA_Presentation.pdf).
+Please review our full analysis in [our Jupyter Notebook](./code/Analysis_of_Movie_Data.ipynb) or our [presentation](./Film_Market_Analysis.pdf).
 
 For any additional questions, please contact us:
 
@@ -248,5 +250,5 @@ Describe the structure of your repository and its contents, for example:
 ├── images
 ├── README.md
 ├── .gitignore
-└── Movie_EDA_Presentation.pdf
+└── Film_Market_Analysis.pdf
 ```
